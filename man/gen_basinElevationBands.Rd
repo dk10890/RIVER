@@ -35,3 +35,16 @@ It also applies different clean up operations that require user specified values
 smoothr::drop_crumbs() and smoothr::fill_holes() functions. These sub-basins, once stored as a
 shape file can then be further edited in QGIS.
 }
+\examples{
+\dontrun{
+dem_PathN <- normalizePath(file.path("DEM.tif"))
+dem_FileN <- "DEM.tif"
+band_interval <- 500 # in meters
+holeSize_km2 <- 10 # cleaning holes smaller than that size
+smoothFact <- 2 # level of band smoothing
+demAggFact <- 2 # dem aggregation factor
+elevBands <- gen_basinElevationBands(dem_PathN, dem_FileN, demAggFact,
+                                     band_interval, holeSize_km2, smoothFact)
+plot(elevBands)
+}
+}

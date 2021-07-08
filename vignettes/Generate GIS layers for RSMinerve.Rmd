@@ -1,0 +1,27 @@
+---
+title: "Generate GIS layers for RSMinerve"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Generate GIS layers for RSMinerve}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+RS Minerve is a free of charge hydrolological and hydraulic modelling interface (available for download from [CREALP](https://www.crealp.ch/fr/accueil/outils-services/logiciels/rs-minerve/telechargement-rsm.html)). The model setup in RS Minerve is facilitated by importing GIS layers for the basin geometry and the river network (see the RS Minerve User Manual, also available from the CRALP RS Minerve download site linked above). 3 GIS layers need to be prepared: A basins layer containing the polygons of the hydrological response units to be modeled, a river layer containing the river sections that will be used to simulate flow routing in the catchment, and a junctions layer that links the basins and rivers together.   
+
+The vignette shows how to generate the GIS layers for import into RS Minerve. 
+
+```{r setup, results='hide'}
+library(riversCentralAsia)
+```
+
+
+
+
